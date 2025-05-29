@@ -39,7 +39,7 @@ async def upload_file(file: UploadFile = File(...)):
 async def predict(filename: str):
     try:
         # Usa la ruta absoluta consistentemente
-        upload_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "uploads"))
+        upload_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "uploads"))
         file_path = os.path.join(upload_dir, filename)
 
         print(f"Buscando archivo en: {file_path}")  # Para depuración
