@@ -3,15 +3,10 @@ from sqlalchemy import create_engine, text
 from sqlalchemy.orm import sessionmaker, declarative_base
 from sqlalchemy.exc import OperationalError
 
-DATABASE_URL = "mysql+pymysql://root:mysql@localhost:3306/eduforge"  # Asegúrate de que la URL esté correcta
+DATABASE_URL = "postgresql://postgres:tKRAnogiyPeEHIuziQwzxyiDXuMHEcAD@switchback.proxy.rlwy.net:13468/railway"  # Asegúrate de que la URL esté correcta
 
-# Crear el engine de SQLAlchemy para conectar con PostgreSQL
 engine = create_engine(DATABASE_URL)
-
-# Crear la sesión de base de datos
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
-# Declarar la base para los modelos
 Base = declarative_base()
 
 # Verificar la conexión a la base de datos
